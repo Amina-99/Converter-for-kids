@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<style>
+    *
+    {margin: 0px;
+    padding: 0px;
+    }
+    body
+    {background-image: url("https://cdn.pixabay.com/photo/2017/09/10/19/47/color-2736781_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;}
+    #duz
+    {display: none;}
+    #pov
+    {display: none;}
+    #ms
+    {display: none;}
+    #vol
+    {display: none;}
+    input[type="number"]
+    {width: 180px;}
+    .centimetri,
+    .metri,
+    .milimetri, 
+    .decimetri,
+    .centrimetri-kva,
+    .decimetri-kva,
+    .milimetri-kva,
+    .metri-kva,
+    .cm-kuv,
+    .metar-kub, 
+    .mm-kub,
+    .dm-kub,
+    .kilogram,
+    .dekagram,
+    .gram,
+    .tona,
+    .miligram
+    {display: flex;
+    flex-direction: row;
+    width: 40%;
+    padding:15px;
+    padding-top: 12px;}
+
+    .form-control
+    {display: inline-block;}
+
+    
+    .volumen
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    border: solid 1px;
+    border-radius: 7px;
+    width: 600px;
+    margin: auto;
+    margin-top: 180px;
+    position: relative;
+    background-color: #eeecec;
+    }
+    .duzina,
+    .povrsina,
+    .masa
+    {display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    border: solid 1px;
+    border-radius: 7px;
+    width: 600px;
+    margin: auto;
+    margin-top: 180px;
+    position: relative;
+    background-color: #fcfcfc;}
+
+    @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap');
+    .cijeli
+    {font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    }
+    h2
+    {font-size: 60px;
+    font-weight: bold;}
+    button
+    {padding:30px;
+    color:White;
+    background-color:blueviolet;
+    font-size: 30px;}
+    button:hover
+    {background-color: aqua;}
+    .dugme-2
+     {writing-mode: vertical-rl;
+    text-orientation: mixed;
+    border-radius: 50%;}
+    .dugme
+    {display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 80px;}
+    .slika-1
+    {height: 100%;
+    width: 300px;
+    float: right;
+    margin-right: 10px;
+    }
+    .slika-4
+    {height: 230px;
+    width: 250px;}
+    .slika-2
+    {height:300px;
+    width: 290px;}
+    .slika-3
+    {margin-top: 40px;
+    height: 250px;
+    width: 290px;}
+  .v,
+  .m,
+  .p
+  {padding-top: 20px;}
+       
+</style>
+<body>
+  <div class="cijeli">
+      <h2>Konverter</h2>
+      <div class="dugme">
+      <button type="button" onclick="prva()">Dužina</button>
+      <button type="button" onclick="druga()">Površina</button>
+      <button type="button" onclick="treca()">Masa</button>
+      <button type="button" onclick="cetvrta()">Volumen</button>
+      </div>
+      <div class="duzina" id="duz">
+          <div>
+          <div class="centimetri">
+          <input type="number" class="form-control" placeholder="Unesite broj" id="unosCM">
+          <label>cm</label>
+          </div>
+          <div class="metri">
+            <input type="number" class="form-control" placeholder="Unesite broj" id="unosM">
+            <label>m</label>
+            </div>
+            <div class="milimetri">
+                <input type="number" class="form-control" placeholder="Unesite broj" id="unosMM">
+                <label for="">mm</label>
+                </div>
+                <div class="decimetri">
+                    <input type="number" class="form-control" placeholder="Unesite broj" id="unosDM">
+                    <label>dm</label>
+                    </div>
+                </div>
+                <div>
+                    <img src="
+                    https://cdn.pixabay.com/photo/2012/04/12/10/55/measuring-tape-29455_960_720.png"
+                    class="slika-1">
+                </div>
+                <div class="fiksirani">
+                    <button type="button" onclick="refreshPage()" class="dugme-2">Refresh page</button>
+                </div>
+            </div>
+            <div class="povrsina" id="pov">
+                <div class="p">
+                <div class="centimetri-kva">
+                    <input type="number" class="form-control" placeholder="Unesite broj" id="unosCMk">
+                    <label>cm<sup>2</sup></label>
+                    </div>
+                    <div class="metri-kva">
+                      <input type="number" class="form-control" placeholder="Unesite broj" id="unosMk">
+                      <label>m<sup>2</sup></label>
+                      </div>
+                      <div class="milimetri-kva">
+                          <input type="number" class="form-control" placeholder="Unesite broj" arial-label="Number to dm" id="unosMMk">
+                          <label>mm<sup>2</sup></label>
+                          </div>
+                          <div class="decimetri-kva">
+                              <input type="number" class="form-control" placeholder="Unesite broj" id="unosDMk">
+                              <label>dm<sup>2</sup></label>
+            </div>
+              </div>
+              <div>
+                  <img class="slika-2" src="https://cdn.pixabay.com/photo/2016/05/13/12/29/urban-1389838_960_720.jpg" >
+              </div>
+              <div class="fiksirani">
+                <button type="button" onclick="refreshPage()" class="dugme-2">Refresh page</button>
+            </div>
+      </div>
+                     <div class="masa" id="ms">
+                        <div class="m">
+                         <div class="kilogram">
+                            <input type="number" class="form-control" placeholder="Unesite broj" id="unosKG">
+                            <label>kg</label>
+                         </div>
+                         <div class="dekagram">
+                             <input type="number" class="form-control" placeholder="Unesite broj" id="unosDG">
+                             <label>dg</label>
+                         </div>
+                         <div class="gram">
+                             <input type="number" class="form-control" placeholder="Unesite broj" id="unosG">
+                             <label>g</label>
+                         </div>
+                         <div class="tona">
+                             <input type="number" class="form-control" placeholder="Unesite broj" id="unosT">
+                             <label>t</label>
+                         </div>
+                         <div class="miligram">
+                             <input type="number" class="form-control" placeholder="Unesite broj" id="unosMG">
+                             <label>mg</label>
+                         </div>
+                     </div>
+                     <div>
+                        <img class="slika-3" src="https://cdn.pixabay.com/photo/2018/04/12/16/19/fat-3313923_960_720.png">
+                    </div>
+                    <div class="fiksirani">
+                        <button type="button" onclick="refreshPage()" class="dugme-2">Refresh page</button>
+                    </div>
+                    </div>
+                    <div class="volumen" id="vol">
+                     <div class="v">
+                        <div class="metar-kub">
+                            <input type="number" class="form-control" placeholder="Unesite broj" id="unosMkub">
+                            <label>m<sup>3</sup></label>
+                        </div>
+                        <div class="dm-kub">
+                            <input type="number" class="form-control" placeholder="Unesite broj" id="unosDMkub">
+                            <label>dm<sup>3</sup></label>
+                        </div>
+                        <div class="cm-kub">
+                            <input type="number" class="form-control" placeholder="Unesite broj" id="unosCMkub">
+                            <label>cm<sup>3</sup></label>
+                        </div>
+                        <div class="mm-kub">
+                            <input type="number" class="form-control" placeholder="Unesite broj" id="unosMMkub">
+                            <label>mm<sup>3</sup></label>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="slika-4" src="https://cdn.pixabay.com/photo/2017/02/01/11/50/clones-2029896_960_720.png">
+                    </div>
+                    <div class="fiksirani">
+                        <button type="button" onclick="refreshPage()" class="dugme-2">Refresh page</button>
+                    </div>
+                 </div>
+  </div>
+  <script>
+  function prva()
+  {document.getElementById("duz").style.display='flex';}
+     function druga()
+      {document.getElementById("pov").style.display='flex';}
+         function treca()
+           {document.getElementById("ms").style.display='flex';}
+             function cetvrta()
+             {document.getElementById("vol").style.display='flex';}
+            function refreshPage()
+            {window.location.reload();}
+
+document.getElementById('unosCM').addEventListener('input', function(e){
+var cm = e.target.value;
+console.log(cm);
+document.getElementById('unosM').value= (cm/100); 
+document.getElementById('unosMM').value= (cm*10);
+document.getElementById('unosDM').value=(cm/10);
+});  
+document.getElementById('unosM').addEventListener('input', function(e){
+	var m = e.target.value;
+	console.log(m);
+	document.getElementById('unosCM').value = (m*100);
+    document.getElementById('unosDM').value = (m*10);
+    document.getElementById('unosMM').value=(m*1000);
+});
+
+document.getElementById('unosDM').addEventListener('input', function(e){
+	var dm = e.target.value;
+	console.log(dm);
+	document.getElementById('unosCM').value = (dm*10);
+    document.getElementById('unosMM').value = (dm*100);
+    document.getElementById('unosM').value=(dm/10);
+});
+document.getElementById('unosMM').addEventListener('input', function(e){
+	var mm = e.target.value;
+	console.log(mm);
+	document.getElementById('unosCM').value = (mm/10);
+    document.getElementById('unosDM').value = (mm/100);
+    document.getElementById('unosM').value = (mm/1000);
+});
+document.getElementById('unosCMk').addEventListener('input', function(e){
+	var cmk = e.target.value;
+	console.log(cmk);
+	document.getElementById('unosMMk').value = (cmk*100);
+    document.getElementById('unosDMk').value = (cmk/100);
+    document.getElementById('unosMk').value = (cmk/10000);
+});
+document.getElementById('unosDMk').addEventListener('input', function(e){
+	var dmk = e.target.value;
+	console.log(dmk);
+	document.getElementById('unosMMk').value = (dmk*10000);
+    document.getElementById('unosCMk').value = (dmk*100);
+    document.getElementById('unosMk').value = (dmk/100);
+});
+document.getElementById('unosMk').addEventListener('input', function(e){
+	var mk = e.target.value;
+	console.log(mk);
+	document.getElementById('unosMMk').value = (mk*1000000);
+    document.getElementById('unosDMk').value = (mk*100);
+    document.getElementById('unosCMk').value = (mk*10000);
+});
+document.getElementById('unosMMk').addEventListener('input', function(e){
+	var mmk = e.target.value;
+	console.log(mmk);
+	document.getElementById('unosCMk').value = (mmk/100);
+    document.getElementById('unosDMk').value = (mmk/10000);
+    document.getElementById('unosMk').value = (mmk/1000000);
+});
+document.getElementById('unosKG').addEventListener('input', function(e){
+	var kg = e.target.value;
+	console.log(kg);
+	document.getElementById('unosDG').value = (kg*100);
+    document.getElementById('unosG').value = (kg*1000);
+    document.getElementById('unosMG').value = (kg*1000000);
+    document.getElementById('unosT').value = (kg/1000);
+});
+document.getElementById('unosDG').addEventListener('input', function(e){
+	var dg = e.target.value;
+	console.log(dg);
+	document.getElementById('unosKG').value = (dg/10);
+    document.getElementById('unosG').value = (dg*10);
+    document.getElementById('unosMG').value = (dg*10000);
+    document.getElementById('unosT').value = (dg/10000);
+});
+
+document.getElementById('unosMG').addEventListener('input', function(e){
+	var mg = e.target.value;
+	console.log(mg);
+	document.getElementById('unosKG').value = (mg/1000000);
+    document.getElementById('unosG').value = (mg/1000);
+    document.getElementById('unosDG').value = (mg/10000);
+    document.getElementById('unosT').value = (mg/1000000000);
+});
+document.getElementById('unosT').addEventListener('input', function(e){
+	var t = e.target.value;
+	console.log(t);
+	document.getElementById('unosKG').value = (t*1000);
+    document.getElementById('unosG').value = (t*1000000)
+    document.getElementById('unosDG').value = (t*10000)
+    document.getElementById('unosMG').value = (t*1000000000);
+});
+document.getElementById('unosG').addEventListener('input', function(e){
+	var g = e.target.value;
+	console.log(g);
+	document.getElementById('unosKG').value =(g/1000);
+    document.getElementById('unosMG').value = (g*1000);
+    document.getElementById('unosDG').value = (g/100);
+    document.getElementById('unosT').value = (g/1000000);
+});
+document.getElementById('unosCMkub').addEventListener('input', function(e){
+	var cmkub = e.target.value;
+	console.log(cmkub);
+	document.getElementById('unosMMkub').value = (cmkub*1000);
+    document.getElementById('unosDMkub').value = (cmkub/1000);
+    document.getElementById('unosMkub').value = (cmkub/1000000);
+});
+document.getElementById('unosDMkub').addEventListener('input', function(e){
+	var dmkub = e.target.value;
+	console.log(dmkub);
+	document.getElementById('unosMMkub').value = (dmkub*1000000);
+    document.getElementById('unosCMkub').value = (dmkub*1000);
+    document.getElementById('unosMkub').value = (dmkub/1000);
+});
+document.getElementById('unosMkub').addEventListener('input', function(e){
+	var mkub = e.target.value;
+	console.log(mkub);
+	document.getElementById('unosMMkub').value = (mkub*1000000000);
+    document.getElementById('unosCMkub').value = (mkub*1000000);
+    document.getElementById('unosDMkub').value = (mkub*1000);
+});
+document.getElementById('unosMMkub').addEventListener('input', function(e){
+	var mmkub = e.target.value;
+	console.log(mmkub);
+	document.getElementById('unosDMkub').value = (mmkub/1000000);
+    document.getElementById('unosCMkub').value = (mmkub/1000)
+    document.getElementById('unosMkub').value = (mmkub/1000000000);
+});
+</script>
+</body>
+</html>
